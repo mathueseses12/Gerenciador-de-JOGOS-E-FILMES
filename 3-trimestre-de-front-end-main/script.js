@@ -25,8 +25,20 @@ function renderizarGrid(lista){
         nesta categoria</p>`;
         return;
     }
+    //executa a funcao de carregarCatalogo quando incia a pagina     
 }
 
-
-//executa a funcao de carregarCatalogo quando incia a pagina     
 document.addEventListener('DOMContentLoaded', carregarCatalogo);
+
+lista.forEach(item =>{
+const card = document.createElement('div');
+card.className = 'card'
+
+card.innerHTML = `
+<div>
+<span class="tag-categoria">$(item.categoria)</span>
+<h3>$(item.titulo)</h3>
+<p class="
+</div>
+`
+});
