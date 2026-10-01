@@ -1,71 +1,67 @@
-*{
-    align-items: center;
-    justify-content: center;
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    
-    
-    body{
+}
+
+body {
     background-color: #0f172a;
     color: #f8fafc;
     padding: 20px;
-    }
-    
-    
-    header{
+}
+
+header {
     text-align: center;
     margin-bottom: 25px;
-    }
-    
-    
-    header h1{
+}
+
+header h1 {
     color: #38bdf8;
     font-size: 2.2em;
-    }
-    
-    
-    .container{
+}
+
+.container {
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 25px;
-    }
-    
-    
-    .painel-cadastro{
+}
+
+/* Seção do Formulário */
+.painel-cadastro {
     background: #1e293b;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #334155;
-    }
-    .painel-cadastro h2{
+}
+
+.painel-cadastro h2 {
     font-size: 1.2em;
     margin-bottom: 15px;
     color: #94a3b8;
-    }
-    .painel-cadastro form{
-    align-items: center;
-    justify-content: center;
-    
+}
+
+.painel-cadastro form {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    }
-    .painel-cadastro input, .painel-cadastro select{
-    background:#0f172a;
+    align-items: center;
+    justify-content: center;
+}
+
+.painel-cadastro input, 
+.painel-cadastro select {
+    background: #0f172a;
     color: #ffffff;
     border: 1px solid #475569;
     padding: 10px;
-    border: 6px;
+    border-radius: 6px; /* Corrigido: era 'border: 6px' e quebrava o arredondamento */
     flex: 1 1 180px;
-    }
-    
-    
-    .btn-salvar{
+}
+
+.btn-salvar {
     background-color: #0284c7;
     color: #ffffff;
     border: none;
@@ -73,17 +69,19 @@
     border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
-    }
-    .btn-salvar:hover{
+}
+
+.btn-salvar:hover {
     background-color: #0369a1;
-    }
-    
-    
-    .filtros{
+}
+
+/* Filtros */
+.filtros {
     text-align: center;
     margin-bottom: 20px;
-    }
-    .filtros button{
+}
+
+.filtros button {
     background-color: #334155;
     color: #ffffff;
     border: none;
@@ -91,66 +89,81 @@
     margin: 0 4px;
     border-radius: 6px;
     cursor: pointer;
-    }
-    .filtros button:hover{
+    transition: background-color 0.2s ease;
+}
+
+.filtros button:hover {
     background-color: #475569;
-    }
-    
-    
-    .grid{
+}
+
+/* Grid do Catálogo */
+.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* auto-fill evita que um único card estique na tela toda */
     gap: 20px;
-    }
-    
-    
-    .card{
+}
+
+/* Configuração dos Cards */
+.card {
     background: #1e293b;
     border-radius: 10px;
-    padding: 15px;
     border: 1px solid #334155;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    }
-    .card h3{
+    overflow: hidden; /* Corta a imagem nas bordas arredondadas do card */
+}
+
+/* Elemento interno que segura os textos do card */
+.card > div:last-child {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* CORREÇÃO DAS CAPAS: Tamanho padronizado e sem distorção */
+.capa-midia {
+    width: 100%;
+    height: 320px;      /* Altura ideal para pôsteres de filmes/jogos */
+    object-fit: cover;  /* Preenche o espaço sem amassar a imagem */
+    display: block;
+}
+
+.card h3 {
     color: #f1f5f9;
     font-size: 1.1em;
-    margin-bottom: 5px;
-    }
-    
-    
-    .tag-categoria{
+    margin-bottom: 8px;
+}
+
+.tag-categoria {
     background: #0284c7;
     font-size: 0.75em;
     padding: 2px 8px;
     border-radius: 4px;
     display: inline-block;
     margin-bottom: 10px;
-    }
-    
-    
-    .info{
+    align-self: flex-start; /* Impede a tag de esticar horizontalmente */
+}
+
+.info {
     font-size: 0.9em;
     color: #94a3b8;
     margin-bottom: 5px;
-    }
-    
-    
-    .nota{
+}
+
+.nota {
     color: #facc15;
     font-weight: bold;
-    }
-    
-    
-    .card-acoes{
-    margin-top: 15px;
+}
+
+.card-acoes {
+    margin-top: auto; /* Empurra os botões de ação sempre para o rodapé do card */
+    padding-top: 15px;
     display: flex;
     gap: 8px;
-    }
-    
-    
-    .btn-status{
+}
+
+.btn-status {
     background-color: #334155;
     color: #38bdf8;
     border: 1px solid #38bdf8;
@@ -159,16 +172,17 @@
     cursor: pointer;
     flex: 1;
     font-size: 0.8em;
-    }
-    
-    
-    .btn-deletar{
+}
+
+.btn-deletar {
     background-color: #ef4444;
     color: #ffffff;
     border: none;
     padding: 6px;
     border-radius: 4px;
     cursor: pointer;
-    flex:1;
+    flex: 1;
     font-size: 0.8em;
-    }
+}
+
+    

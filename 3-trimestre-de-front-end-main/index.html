@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub de Mídias</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-<h1>Hub de Midias</h1>
-<p>Gerenciador de Jogos, Filmes e Series</p>
+    <header>
+        <h1>Hub de Mídias</h1>
+        <p>Gerenciador de Jogos, Filmes e Séries</p>
+    </header>
+    
+    <main class="container">
+        <!-- Seção do Formulário -->
+        <section class="painel-cadastro">
+            <h2>Adicionar à Lista de Mídia</h2>
+            <form action="" id="form-midia">
+                <input type="text" id="titulo" placeholder="Ex: Nine Souls, Hollow Knight" required>
+                <select id="categoria" required>
+                    <option value="">Categoria</option>
+                    <option value="Jogos">Jogos</option>
+                    <option value="Filmes">Filmes</option>
+                    <option value="Séries">Séries</option>
+                </select>
+                <input type="text" id="plataforma" placeholder="Ex: Netflix, PC" required>
+                <!-- Modificado para type="number" para aceitar decimais corretamente -->
+                <input type="number" id="nota" step="0.1" min="0" max="10" placeholder="Nota: 0 a 10.0" required>
+                <button type="submit" class="btn-salvar">Adicionar</button>
+            </form>
+        </section>
 
-</header>
-<main class="container">
-<section class="painel-cadastro">
-<h2>Adicionar á Lista de Mídia</h2>
-<form action="" id="form-midia">
-<input type="text" id="titulo" placeholder="Ex:Nine Souls, Hollow Night">
-<select name="" id="categoria" required>
-<option value="Categoria">Categoria</option>
-<option value="Jogos">Jogos</option>
-<option value="Filmes">Filmes</option>
-<option value="Series">Series</option>
-</select>
-<input type="text" id="plataforma" placeholder="Ex: netflix,PC">
-<input type="text" id="nota" step="0.1" min="0" max="10" placeholder="Ex: 0 a 10.0" required>
-<button type="submit" class="btn-salvar">Adicionar</button>
-<section class="painel-catalogo">
-<div class="filtros">
-<button>Todos</button>
-<button>Jogos</button>
-<button>Series</button>
-<button>Filmes</button>
-</div>
-<div id="catalogo-grid" class="grid">
-<!--Os cards serão exibidos aqui-->
-</div>
-</section>
+        <!-- Seção do Catálogo (Fora do Form) -->
+        <section class="painel-catalogo">
+            <div class="filtros">
+                <button>Todos</button>
+                <button>Jogos</button>
+                <button>Séries</button>
+                <button>Filmes</button>
+            </div>
+            <div id="catalogo-grid" class="grid">
+                <!-- Os cards serão exibidos aqui -->
+            </div>
+        </section>
+    </main>
 
-</form>
-</section>
-
-
-
-</main>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
