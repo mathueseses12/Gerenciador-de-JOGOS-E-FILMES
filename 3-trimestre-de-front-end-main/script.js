@@ -17,6 +17,19 @@ async function carregarCatalogo() {
     console.error(erro);
   }
 }
+//metodo post
+async function adicionarItem(event){
+event.preventDefault();
+
+const.novoItem = {
+  id: ,
+  titulo: ,
+  categoria: ,
+  plataforma: ,
+  nota: ,
+  status:
+}
+}
 
 // 2. RENDERIZAR OS CARDS NA TELA
 function rendenizarGrid(lista) {
